@@ -22,5 +22,15 @@ namespace POMHomework.Utilities.Extensions
 
             return element;
         }
+
+        public static string GetCssColor(this WebElement element)
+        {
+            return element.WrappedElement.GetCssValue("background-color");
+        }
+
+        public static string GetProperty(this WebElement element)
+        {
+            return element.WrappedElement.GetProperty("value");
+        }
     }
 }

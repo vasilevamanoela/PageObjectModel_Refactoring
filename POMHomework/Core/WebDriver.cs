@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -9,6 +10,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace StabilizeTestsDemos.ThirdVersion
 {
@@ -81,6 +83,13 @@ namespace StabilizeTestsDemos.ThirdVersion
         public void Navigate(string url)
         {
             WrappedDriver.Navigate().GoToUrl(url);
+        }
+
+        public void TakeScreenshot()
+        {
+            string dirPath = Path.GetFullPath(@"..\..\..\", Directory.GetCurrentDirectory());
+            var screenshot = ((ITakesScreenshot)WrappedDriver).GetScreenshot();
+            screenshot.SaveAsFile($"{dirPath}\\Screenshots\\{TestContext.CurrentContext.Test.FullName}.png", ScreenshotImageFormat.Png);
         }
     }
 }

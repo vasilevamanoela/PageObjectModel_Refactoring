@@ -1,10 +1,8 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using OpenQA.Selenium;
 using POMHomework.Factories._01GoogleSearch;
 using POMHomework.Models._01GoogleSearch;
 using POMHomework.Pages._01GoogleSearch;
-using System.IO;
 
 namespace POMHomework.Tests._01GoogleSearch
 {
@@ -28,9 +26,7 @@ namespace POMHomework.Tests._01GoogleSearch
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                string dirPath = Path.GetFullPath(@"..\..\..\", Directory.GetCurrentDirectory());
-                var screenshot = ((ITakesScreenshot)Driver.WrappedDriver).GetScreenshot();
-                screenshot.SaveAsFile($"{dirPath}\\Screenshots\\{TestContext.CurrentContext.Test.FullName}.png", ScreenshotImageFormat.Png);
+                Driver.TakeScreenshot();
             }
 
             Driver.Quit();

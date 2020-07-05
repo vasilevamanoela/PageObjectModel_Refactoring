@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using OpenQA.Selenium;
 using POMHomework.Pages._02QAAutomation;
 using POMHomework.Tests._01GoogleSearch;
-using System.IO;
 
 namespace POMHomework.Tests._02QAAutomation
 {
@@ -25,14 +23,11 @@ namespace POMHomework.Tests._02QAAutomation
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
             {
-                string dirPath = Path.GetFullPath(@"..\..\..\", Directory.GetCurrentDirectory());
-                var screenshot = ((ITakesScreenshot)Driver.WrappedDriver).GetScreenshot();
-                screenshot.SaveAsFile($"{dirPath}\\Screenshots\\{TestContext.CurrentContext.Test.FullName}.png", ScreenshotImageFormat.Png);
+                Driver.TakeScreenshot();
             }
 
             Driver.Quit();
         }
-
 
         [Test]
         public void QAAutomationTitleDisplayed_When_NavigateToQAAutomationCoursePage()

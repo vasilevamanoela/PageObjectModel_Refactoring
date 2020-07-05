@@ -1,10 +1,8 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium.Interactions;
+﻿using OpenQA.Selenium.Interactions;
 using StabilizeTestsDemos.ThirdVersion;
 
 namespace POMHomework.Tests._01GoogleSearch
 {
-    [TestFixture]
     public class BaseTest
     {
         protected WebDriver Driver { get; set; }

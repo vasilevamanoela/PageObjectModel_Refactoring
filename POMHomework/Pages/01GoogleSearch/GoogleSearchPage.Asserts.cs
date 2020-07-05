@@ -7,7 +7,7 @@ namespace POMHomework.Pages._01GoogleSearch
     {
         public void AssertFirstResultTitle(WebElement element)
         {
-            Assert.AreEqual("Selenium", element.Text);
+            Assert.AreEqual("Selenium.dev", element.Text);
         }
     }
 }
