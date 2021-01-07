@@ -41,7 +41,5 @@ namespace POMHomework.Tests._05DemoQA.Navigation
 
             _navigationPage.AssertCorrectTitleSection(sectionName, _navigationPage.PageHeader);
         }
-
-        //some logic here 
     }
 }
