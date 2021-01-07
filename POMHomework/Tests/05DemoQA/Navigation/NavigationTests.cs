@@ -40,11 +40,6 @@ namespace POMHomework.Tests._05DemoQA.Navigation
             _navigationPage.Navigation(sectionName);
 
             _navigationPage.AssertCorrectTitleSection(sectionName, _navigationPage.PageHeader);
-
-            for (int i = 0; i < 10; i++)
-            {
-                // some logic here
-            }
         }
     }
 }
